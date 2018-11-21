@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ObjcExtensionProperty_Example' do
+  pod 'ObjcExtensionProperty', :path => '../'
+
+  target 'ObjcExtensionProperty_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
