@@ -3,7 +3,7 @@
 //  Pods
 //
 //  Created by 罗亮富(Roen-Ro) zxllf23@163.com on 2018/11/20.
-//
+//  github profile:https://github.com/Roen-Ro
 
 #ifndef DynamicGetterSetter_h
 #define DynamicGetterSetter_h
@@ -19,7 +19,7 @@
 if(!_##name){             \
 _##name = initializer; \
 } \
-return _##name\
+return _##name;\
 }
 
 //getter and setter methods macro defines for dynamic binded varaiables, typically for properties defined in class extensions

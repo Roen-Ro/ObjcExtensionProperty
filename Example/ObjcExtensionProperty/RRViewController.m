@@ -8,25 +8,32 @@
 
 #import "RRViewController.h"
 #import "UIView+DyanmicTest.h"
+#import "HttpClient.h"
 
 @interface RRViewController ()
+
+@property (nonatomic,lazy) HttpClient *client;
 
 @end
 
 @implementation RRViewController
+{
+    HttpClient *_client;
+}
+
+//lazy getter method for self.client
+__GETTER_LAZY_IVAR(HttpClient, client, [[HttpClient alloc]initWithUrl:@"https://github.com/Roen-Ro"])
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"log _client.url:%@",_client.url);
+    NSLog(@"log self.client.url:%@",self.client.url);
 	
     NSLog(@"1===>ViewProperties before setting values");
     [self logViewProperties];
     
-//    @property (nonatomic, strong) NSString *dynProperty;
-//    @property (nonatomic, weak) NSString *dynWeakProperty;
-//    @property (nonatomic) int dynPrimitiveValue;
-//    @property (nonatomic, lazy) NSString *lazyProperty;
-//    @property (nonatomic, lazy) NSString *lazyFirstAccessTimeString;
     
     self.view.dynProperty = [NSString stringWithFormat:@"assigned in %s",__PRETTY_FUNCTION__];
     self.view.dynWeakProperty = [NSString stringWithFormat:@"viewcontroller is %p",self];
@@ -44,7 +51,9 @@
 
 -(void)logViewProperties {
     
-    NSLog(@"{\n \tself.view.dynProperty:%@\n \tself.view.dynWeakProperty:%@\n \tself.view.dynPrimitiveValue:%d\n \tself.view.lazyProperty:%@\n \tself.view.lazyFirstAccessTimeString:%@\n\n}\n",self.view.dynProperty,self.view.dynWeakProperty,self.view.dynPrimitiveValue,self.view.lazyProperty,self.view.lazyFirstAccessTimeString);
+    NSLog(@"{\n \tself.view.dynProperty:%@\n \tself.view.dynWeakProperty:%@\n \tself.view.dynPrimitiveValue:%d\n \tself.view.lazyProperty:%@\n\n}\n",self.view.dynProperty,self.view.dynWeakProperty,self.view.dynPrimitiveValue,self.view.lazyProperty);
 }
+
+
 
 @end

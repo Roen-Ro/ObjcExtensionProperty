@@ -10,16 +10,21 @@
 
 @implementation UIView (DyanmicTest)
 
+//common getter/setter
 __SETTER(dynProperty, setDynProperty, OBJC_ASSOCIATION_RETAIN)
 __GETTER(NSString, dynProperty)
 
-__SETTER_WEAK(dynWeakProperty, setDynWeakProperty)
-__GETTER_WEAK(NSString, dynWeakProperty)
-
+//primitive type getter/setter
 __SETTER_PRIMITIVE(int,dynPrimitiveValue, setDynPrimitiveValue, numberWithInt:)
 __GETTER_PRIMITIVE(int, dynPrimitiveValue, intValue)
 
-__GETTER_LAZY(NSString, lazyProperty, [NSMutableString stringWithString:@"I'm lazyProperty"])
-__GETTER_LAZY(NSString, lazyFirstAccessTimeString,[NSString stringWithFormat:@"lazy created on %@",[NSDate date]])
+//weak reference getter/setter
+__SETTER_WEAK(dynWeakProperty, setDynWeakProperty)
+__GETTER_WEAK(NSString, dynWeakProperty)
+
+//lazy property getter
+__GETTER_LAZY(NSString, lazyProperty,[NSString stringWithFormat:@"lazy created on %@",[NSDate date]])
+
+
 
 @end

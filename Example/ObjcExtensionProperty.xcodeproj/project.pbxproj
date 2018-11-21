@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9FA9D7F921A4EA450038C6F7 /* UIView+DyanmicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9D7F721A4EA450038C6F7 /* UIView+DyanmicTest.m */; };
+		9FA9D7FC21A509110038C6F7 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9D7FB21A509110038C6F7 /* HttpClient.m */; };
 		A125B99C01EEA587611EF950 /* Pods_ObjcExtensionProperty_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C45C2433C4B83C3FF2AD911 /* Pods_ObjcExtensionProperty_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FA9D7F721A4EA450038C6F7 /* UIView+DyanmicTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DyanmicTest.m"; sourceTree = "<group>"; };
 		9FA9D7F821A4EA450038C6F7 /* UIView+DyanmicTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DyanmicTest.h"; sourceTree = "<group>"; };
+		9FA9D7FA21A509110038C6F7 /* HttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		9FA9D7FB21A509110038C6F7 /* HttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		A21055848D77A6BAD3D131F7 /* Pods-ObjcExtensionProperty_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcExtensionProperty_Example.release.xcconfig"; path = "Target Support Files/Pods-ObjcExtensionProperty_Example/Pods-ObjcExtensionProperty_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D6E23443778C6E039380BD36 /* Pods_ObjcExtensionProperty_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcExtensionProperty_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,6 +157,8 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				9FA9D7F821A4EA450038C6F7 /* UIView+DyanmicTest.h */,
 				9FA9D7F721A4EA450038C6F7 /* UIView+DyanmicTest.m */,
+				9FA9D7FA21A509110038C6F7 /* HttpClient.h */,
+				9FA9D7FB21A509110038C6F7 /* HttpClient.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -377,6 +382,7 @@
 			files = (
 				6003F59E195388D20070C39A /* RRAppDelegate.m in Sources */,
 				9FA9D7F921A4EA450038C6F7 /* UIView+DyanmicTest.m in Sources */,
+				9FA9D7FC21A509110038C6F7 /* HttpClient.m in Sources */,
 				6003F5A7195388D20070C39A /* RRViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

@@ -11,10 +11,9 @@
 
 @interface UIView (DyanmicTest)
 
-@property (nonatomic, strong) NSString *dynProperty;
-@property (nonatomic, weak) NSString *dynWeakProperty;
-@property (nonatomic) int dynPrimitiveValue;
-@property (nonatomic, lazy) NSString *lazyProperty;
-@property (nonatomic, lazy) NSString *lazyFirstAccessTimeString;
+@property (nonatomic, strong) NSString *dynProperty; //common object property
+@property (nonatomic) int dynPrimitiveValue; //primitive type property
+@property (nonatomic, weak) NSString *dynWeakProperty; //weak property
+@property (nonatomic, lazy) NSString *lazyProperty; //lazy property
 @end
 
