@@ -1,6 +1,5 @@
 # ObjcExtensionProperty
 
-[![CI Status](https://img.shields.io/travis/zxllf23@163.com/ObjcExtensionProperty.svg?style=flat)](https://travis-ci.org/zxllf23@163.com/ObjcExtensionProperty)
 [![Version](https://img.shields.io/cocoapods/v/ObjcExtensionProperty.svg?style=flat)](https://cocoapods.org/pods/ObjcExtensionProperty)
 [![License](https://img.shields.io/cocoapods/l/ObjcExtensionProperty.svg?style=flat)](https://cocoapods.org/pods/ObjcExtensionProperty)
 [![Platform](https://img.shields.io/cocoapods/p/ObjcExtensionProperty.svg?style=flat)](https://cocoapods.org/pods/ObjcExtensionProperty)
@@ -11,7 +10,39 @@
 - Add weak properties for calss extension (also with just one line code)
 - Easy to add lazy property getter method with just one line code
 
+## Usage
+use any of the macro definions below to implement your getter/setter(s)
+```objc
+//instance variable backed lazy getter method macro define
+#define __GETTER_LAZY_IVAR(Class,name,initializer...)
 
+//dynamic property lazy getter method
+#define __GETTER_LAZY(Class,name,initializer...)
+
+//common object type property setter method
+#define __SETTER(name,setter,association)
+
+//common object type property getter method
+#define __GETTER(Class,name) -(Class *)name
+
+//common object type property getter method provide a default return value
+#define __GETTER_DEFAULT(Class,name,defaultValue)
+
+//common weak object type property setter method
+#define __SETTER_WEAK(name,setter)
+
+//common weak object type property getter method
+#define __GETTER_WEAK(Class,name)
+
+//primitive type property setter method
+#define __SETTER_PRIMITIVE(type,name,setter,NSNumberMethod)
+
+//primitive type property getter method
+#define __GETTER_PRIMITIVE(type,name,NSNumberMethod)
+
+//primitive type property getter method with a default return value
+#define __GETTER_PRIMITIVE_DEFAULT(type,name,defaultValue,NSNumberMethod)
+```
 ## Example
 
 ### Add various kinds of properties for class extension
@@ -26,6 +57,8 @@ Let see how easy it is to add various kinds of properties though [ObjcExtensionP
 @property (nonatomic) int dynPrimitiveValue; //primitive type property
 @property (nonatomic, weak) NSString *dynWeakProperty; //weak property
 @property (nonatomic, lazy) NSString *lazyProperty; //lazy proper
+
+@property (nonatomic) CGFloat *dynHeight; //with default value（default is 480.0）
 
 @end
 ```
@@ -48,6 +81,9 @@ __GETTER_WEAK(NSString, dynWeakProperty)
 
 //lazy property getter
 __GETTER_LAZY(NSString, lazyProperty,[NSString stringWithFormat:@"lazy created on %@",[NSDate date]])
+
+__SETTER_PRIMITIVE(CGFloat, dynHeight, setDynHeight, numberWithDouble:)
+__GETTER_PRIMITIVE_DEFAULT(CGFloat, dynHeight, 480.0, doubleValue)
 
 @end
 ```

@@ -15,5 +15,8 @@
 @property (nonatomic) int dynPrimitiveValue; //primitive type property
 @property (nonatomic, weak) NSString *dynWeakProperty; //weak property
 @property (nonatomic, lazy) NSString *lazyProperty; //lazy property
+
+@property (nonatomic) CGFloat *dynHeight; //default is 480.0
+
 @end
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ObjcExtensionProperty'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Convenient objc getter/setter adding for classes and extensions'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ Convenient objc getter/setter adding for classes and extensions.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+ 
 end

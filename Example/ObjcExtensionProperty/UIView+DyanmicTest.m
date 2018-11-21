@@ -25,6 +25,9 @@ __GETTER_WEAK(NSString, dynWeakProperty)
 //lazy property getter
 __GETTER_LAZY(NSString, lazyProperty,[NSString stringWithFormat:@"lazy created on %@",[NSDate date]])
 
+__SETTER_PRIMITIVE(CGFloat, dynHeight, setDynHeight, numberWithDouble:)
+__GETTER_PRIMITIVE_DEFAULT(CGFloat, dynHeight, 480.0, doubleValue)
+
 
 
 @end
