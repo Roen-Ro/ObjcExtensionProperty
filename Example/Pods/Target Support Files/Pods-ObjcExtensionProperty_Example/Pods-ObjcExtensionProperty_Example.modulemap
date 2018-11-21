@@ -1,0 +1,6 @@
+framework module Pods_ObjcExtensionProperty_Example {
+  umbrella header "Pods-ObjcExtensionProperty_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

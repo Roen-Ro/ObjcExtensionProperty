@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ObjcExtensionProperty'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ObjcExtensionProperty.'
+  s.summary          = 'convenient property getter/setter adding methods for objc class extensions'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/zxllf23@163.com/ObjcExtensionProperty'
+  s.homepage         = 'https://github.com/Roen-Ro/ObjcExtensionProperty.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zxllf23@163.com' => 'zxllf23@163.com' }
-  s.source           = { :git => 'https://github.com/zxllf23@163.com/ObjcExtensionProperty.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Roen-Ro/ObjcExtensionProperty.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '5.0'
 
   s.source_files = 'ObjcExtensionProperty/Classes/**/*'
   

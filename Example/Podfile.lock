@@ -1,0 +1,16 @@
+PODS:
+  - ObjcExtensionProperty (0.1.0)
+
+DEPENDENCIES:
+  - ObjcExtensionProperty (from `../`)
+
+EXTERNAL SOURCES:
+  ObjcExtensionProperty:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ObjcExtensionProperty: 2c377f4e43132e9f108446d524cdaa301a277a4f
+
+PODFILE CHECKSUM: cddde9487b52193e5b88bc380851538610b0e7c1
+
+COCOAPODS: 1.6.0.beta.1

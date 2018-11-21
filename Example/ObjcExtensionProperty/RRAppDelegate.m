@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [NSString stringWithFormat:@"lazy created on %@",[NSDate date]];
     // Override point for customization after application launch.
     return YES;
 }

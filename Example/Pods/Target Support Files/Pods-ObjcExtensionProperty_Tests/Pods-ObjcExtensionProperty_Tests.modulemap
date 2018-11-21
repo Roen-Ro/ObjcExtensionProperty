@@ -1,0 +1,6 @@
+framework module Pods_ObjcExtensionProperty_Tests {
+  umbrella header "Pods-ObjcExtensionProperty_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
