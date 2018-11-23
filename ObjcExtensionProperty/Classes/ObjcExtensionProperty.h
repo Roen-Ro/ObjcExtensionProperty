@@ -142,7 +142,7 @@ objc_setAssociatedObject(self, key, nil, OBJC_ASSOCIATION_RETAIN); \
 }
 
 //common weak object type property setter method with additional costomize code after setting
-#define __SETTER_WEAK_CUSTOMIZE(name,setter,association,customizeCode...) -(void)setter (id)name { \
+#define __SETTER_WEAK_CUSTOMIZE(name,setter,customizeCode...) -(void)setter (id)name { \
 IMP key = class_getMethodImplementation([self class],@selector(name));\
 if(name) { \
 WeakReference *p = objc_getAssociatedObject(self, key);\
