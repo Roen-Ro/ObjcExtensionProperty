@@ -191,6 +191,8 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'ObjcExtensionProperty'
 ```
+Or drag and drop files in 'ObjcExtensionProperty' directory directly into your xcode projects
+
 
 ## Author
 
