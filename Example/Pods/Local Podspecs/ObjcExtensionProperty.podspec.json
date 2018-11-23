@@ -1,9 +1,9 @@
 {
   "name": "ObjcExtensionProperty",
-  "version": "0.1.0",
-  "summary": "A short description of ObjcExtensionProperty.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/zxllf23@163.com/ObjcExtensionProperty",
+  "version": "1.1.0",
+  "summary": "Convenient objc getter/setter adding for classes and extensions",
+  "description": "Convenient objc getter/setter adding for classes and extensions.",
+  "homepage": "https://github.com/Roen-Ro/ObjcExtensionProperty.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "zxllf23@163.com": "zxllf23@163.com"
   },
   "source": {
-    "git": "https://github.com/zxllf23@163.com/ObjcExtensionProperty.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Roen-Ro/ObjcExtensionProperty.git",
+    "tag": "1.1.0"
   },
   "platforms": {
     "ios": "5.0"

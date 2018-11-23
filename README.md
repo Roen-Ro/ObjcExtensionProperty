@@ -25,6 +25,9 @@ use any of the macro definions below to implement your getter/setter(s)
 //common object type property getter method
 #define __GETTER(Class,name) -(Class *)name
 
+//common object type property setter method with additional costomize code
+#define __SETTER_CUSTOMIZE(name,setter,association,customizeCode...)
+
 //common object type property getter method provide a default return value
 #define __GETTER_DEFAULT(Class,name,defaultValue)
 
@@ -60,6 +63,8 @@ Let see how easy it is to add various kinds of properties though [ObjcExtensionP
 
 @property (nonatomic) CGFloat *dynHeight; //with default value（default is 480.0）
 
+@property (nonatomic,strong) UITableView *tableView; //see the code in .m file
+
 @end
 ```
 add backed getter/setter methods for properties in .m file 
@@ -68,22 +73,32 @@ add backed getter/setter methods for properties in .m file
 @implementation UIView (DyanmicTest)
 
 //common getter/setter
-__SETTER(dynProperty, setDynProperty, OBJC_ASSOCIATION_RETAIN)
+__SETTER(dynProperty, setDynProperty:, OBJC_ASSOCIATION_RETAIN)
 __GETTER(NSString, dynProperty)
 
 //primitive type getter/setter
-__SETTER_PRIMITIVE(int,dynPrimitiveValue, setDynPrimitiveValue, numberWithInt:)
+__SETTER_PRIMITIVE(int,dynPrimitiveValue, setDynPrimitiveValue:, numberWithInt:)
 __GETTER_PRIMITIVE(int, dynPrimitiveValue, intValue)
 
 //weak reference getter/setter
-__SETTER_WEAK(dynWeakProperty, setDynWeakProperty)
+__SETTER_WEAK(dynWeakProperty, setDynWeakProperty:)
 __GETTER_WEAK(NSString, dynWeakProperty)
 
 //lazy property getter
 __GETTER_LAZY(NSString, lazyProperty,[NSString stringWithFormat:@"lazy created on %@",[NSDate date]])
 
-__SETTER_PRIMITIVE(CGFloat, dynHeight, setDynHeight, numberWithDouble:)
+//getter with default return value
+__SETTER_PRIMITIVE(CGFloat, dynHeight, setDynHeight:, numberWithDouble:)
 __GETTER_PRIMITIVE_DEFAULT(CGFloat, dynHeight, 480.0, doubleValue)
+
+
+//setter with customize code
+__SETTER_CUSTOMIZE(tableView, setTableView:, OBJC_ASSOCIATION_RETAIN, {
+    UITableView *tbv = tableView;
+    tbv.dataSource = self;
+    tbv.delegate = self;
+})
+__GETTER(UITableView, tableView)
 
 @end
 ```

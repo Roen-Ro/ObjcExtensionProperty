@@ -1,5 +1,5 @@
 PODS:
-  - ObjcExtensionProperty (0.1.0)
+  - ObjcExtensionProperty (1.1.0)
 
 DEPENDENCIES:
   - ObjcExtensionProperty (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ObjcExtensionProperty: 2c377f4e43132e9f108446d524cdaa301a277a4f
+  ObjcExtensionProperty: 6ade0b9c3599423d25442d121725d94c6ece352d
 
 PODFILE CHECKSUM: cddde9487b52193e5b88bc380851538610b0e7c1
 
