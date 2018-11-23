@@ -18,7 +18,9 @@
 
 @property (nonatomic) CGFloat *dynHeight; //default is 480.0
 
-@property (nonatomic,strong) UITableView *tableView; //see the code in .m file
+//check the code in .m file
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic) CGFloat addHeight;
 
 @end
 

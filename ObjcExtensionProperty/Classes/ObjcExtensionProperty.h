@@ -39,7 +39,7 @@
 if(!_##name){             \
 _##name = initializer; \
 } \
-return _##name;\
+return _##name; \
 }
 
 /************
@@ -94,7 +94,7 @@ return obj;\
 //
 
 /**
- common object type property setter method with additional costomize code
+ common object type property setter method with additional costomize code after setting
  
  @param name proerty name
  @param setter peroperty setter method
@@ -141,6 +141,22 @@ else \
 objc_setAssociatedObject(self, key, nil, OBJC_ASSOCIATION_RETAIN); \
 }
 
+//common weak object type property setter method with additional costomize code after setting
+#define __SETTER_WEAK_CUSTOMIZE(name,setter,association,customizeCode...) -(void)setter (id)name { \
+IMP key = class_getMethodImplementation([self class],@selector(name));\
+if(name) { \
+WeakReference *p = objc_getAssociatedObject(self, key);\
+if(!p) { \
+p = [WeakReference alloc]; \
+objc_setAssociatedObject(self, key, p, OBJC_ASSOCIATION_RETAIN);\
+} \
+p.weakObj = name; \
+} \
+else \
+objc_setAssociatedObject(self, key, nil, OBJC_ASSOCIATION_RETAIN); \
+customizeCode \
+}
+
 //common weak object type property getter method
 #define __GETTER_WEAK(Class,name) -(Class *)name { \
 IMP key = class_getMethodImplementation([self class],@selector(name));\
@@ -159,6 +175,13 @@ objc_setAssociatedObject(self, key, [NSNumber NSNumberMethod name], OBJC_ASSOCIA
 IMP key = class_getMethodImplementation([self class],@selector(name));\
 NSNumber *num = objc_getAssociatedObject(self,key); \
 return num.NSNumberMethod;\
+}
+
+//primitive type property setter method
+#define __SETTER_PRIMITIVE_CUSTOMIZE(type,name,setter,NSNumberMethod,customizeCode...) -(void)setter (type)name { \
+IMP key = class_getMethodImplementation([self class],@selector(name)); \
+objc_setAssociatedObject(self, key, [NSNumber NSNumberMethod name], OBJC_ASSOCIATION_RETAIN_NONATOMIC); \
+customizeCode \
 }
 
 //primitive type property getter method with a default return value

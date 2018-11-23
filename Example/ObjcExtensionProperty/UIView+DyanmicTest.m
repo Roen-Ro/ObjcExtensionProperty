@@ -39,4 +39,10 @@ __SETTER_CUSTOMIZE(tableView, setTableView:, OBJC_ASSOCIATION_RETAIN, {
 __GETTER(UITableView, tableView)
 
 
+//primitive setter with cusomize code
+__SETTER_PRIMITIVE_CUSTOMIZE(CGFloat, addHeight, seAddHeight:, numberWithDouble:, {
+    self.frame = CGRectMake(0, 0, 320, self.frame.size.height+addHeight);
+})
+__GETTER_PRIMITIVE(CGFloat, addHeight, doubleValue)
+
 @end

@@ -59,11 +59,13 @@ Let see how easy it is to add various kinds of properties though [ObjcExtensionP
 @property (nonatomic, strong) NSString *dynProperty; //common object property
 @property (nonatomic) int dynPrimitiveValue; //primitive type property
 @property (nonatomic, weak) NSString *dynWeakProperty; //weak property
-@property (nonatomic, lazy) NSString *lazyProperty; //lazy proper
+@property (nonatomic, lazy) NSString *lazyProperty; //lazy property
 
-@property (nonatomic) CGFloat *dynHeight; //with default value（default is 480.0）
+@property (nonatomic) CGFloat *dynHeight; //default is 480.0
 
-@property (nonatomic,strong) UITableView *tableView; //see the code in .m file
+//check the code in .m file
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic) CGFloat addHeight;
 
 @end
 ```
@@ -99,6 +101,12 @@ __SETTER_CUSTOMIZE(tableView, setTableView:, OBJC_ASSOCIATION_RETAIN, {
     tbv.delegate = self;
 })
 __GETTER(UITableView, tableView)
+
+//primitive setter with cusomize code
+__SETTER_PRIMITIVE_CUSTOMIZE(CGFloat, addHeight, seAddHeight:, numberWithDouble:, {
+    self.frame = CGRectMake(0, 0, 320, self.frame.size.height+addHeight);
+})
+__GETTER_PRIMITIVE(CGFloat, addHeight, doubleValue)
 
 @end
 ```
